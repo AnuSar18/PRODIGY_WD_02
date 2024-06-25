@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch and Timer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">StopWatch Online</h1>
+    <div class="container">
+        <div class="stopwatch-timer">
+            <div id="display" class="display">00:00:00.0</div>
+            <div class="controls">
+                <button id="start" class="btn start">Start</button>
+                <button id="stop" class="btn stop" style="display:none;">Stop</button>
+                <button id="pause" class="btn pause" style="display:none;">Pause</button>
+                <button id="reset" class="btn reset">Reset</button>
+                <button id="lap" class="btn lap">Lap</button>
+            </div>
+            <div class="timer-controls">
+                <input type="number" id="timer-hours" placeholder="HH" min="0">
+                <input type="number" id="timer-minutes" placeholder="MM" min="0" max="59">
+                <input type="number" id="timer-seconds" placeholder="SS" min="0" max="59">
+                <button id="start-timer" class="btn timer-start">Start Timer</button>
+                <button id="pause-timer" class="btn timer-pause" style="display:none;">Pause Timer</button>
+                <button id="resume-timer" class="btn timer-resume" style="display:none;">Resume Timer</button>
+                <button id="stop-timer" class="btn timer-stop" style="display:none;">Stop Timer</button>
+                <button id="reset-timer" class="btn timer-reset">Reset Timer</button>
+            </div>
+            <ul id="laps" class="laps"></ul>
+        </div>
+        <div class="watchface">
+            <img src="image/watchable.png" alt="Watch" class="watch-image">
+            <div id="real-time" class="real-time"></div>
+        </div>
+    </div>
+    <div class="footer">Follows IST</div>
+    <script src="script.js"></script>
+</body>
+</html>

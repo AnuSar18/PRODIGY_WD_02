@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1c1c1c, #2e2e2e);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; 
+}
+
+.stopwatch-timer {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    width: 320px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.watchface {
+    position: relative;
+    width: 400px; 
+    height: 400px; 
+}
+
+.watch-image {
+    width: 100%;
+    height: 100%; 
+    object-fit: contain; 
+    background-color: transparent; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.display, .real-time {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.real-time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffcc00;
+    font-size: 3em; 
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.7); 
+}
+
+.controls, .timer-controls {
+    margin-bottom: 20px;
+}
+
+.btn {
+    margin: 5px;
+    padding: 15px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.btn.start {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 5px #3e8e41;
+}
+
+.btn.stop {
+    background-color: #d9534f;
+    color: white;
+    box-shadow: 0 5px #c9302c;
+}
+
+.btn.pause {
+    background-color: #FF9800;
+    color: white;
+    box-shadow: 0 5px #e68a00;
+}
+
+.btn.reset {
+    background-color: #F44336;
+    color: white;
+    box-shadow: 0 5px #d32f2f;
+}
+
+.btn.lap {
+    background-color: #2196F3;
+    color: white;
+    box-shadow: 0 5px #1976D2;
+}
+
+.btn.timer-start {
+    background-color: #8e44ad;
+    color: white;
+    box-shadow: 0 5px #732d91;
+}
+
+.btn.timer-pause {
+    background-color: #FF9800;
+    color: white;
+    box-shadow: 0 5px #e68a00;
+}
+
+.btn.timer-resume {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 5px #3e8e41;
+}
+
+.btn.timer-stop {
+    background-color: #d9534f;
+    color: white;
+    box-shadow: 0 5px #c9302c;
+}
+
+.btn.timer-reset {
+    background-color: #F44336;
+    color: white;
+    box-shadow: 0 5px #d32f2f;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(1);
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+}
+
+.timer-controls input {
+    margin: 5px;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.laps {
+    list-style-type: none;
+    padding: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.laps li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 1.2em;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 1em;
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
