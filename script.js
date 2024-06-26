@@ -2,7 +2,6 @@ let stopwatchInterval;
 let startTime;
 let updatedTime;
 let difference;
-let tInterval;
 let savedTime = 0;
 let running = false;
 let lapNumber = 0;
@@ -20,7 +19,7 @@ function startStopwatch() {
         running = true;
         document.getElementById('start').style.display = 'none';
         document.getElementById('stop').style.display = 'inline-block';
-        document.getElementById('pause').style.display = 'none';
+        document.getElementById('pause').style.display = 'inline-block';
     }
 }
 
@@ -31,6 +30,7 @@ function stopStopwatch() {
         savedTime += new Date().getTime() - startTime;
         document.getElementById('stop').style.display = 'none';
         document.getElementById('start').style.display = 'inline-block';
+        document.getElementById('pause').style.display = 'none';
     }
 }
 
@@ -88,12 +88,12 @@ function startTimer() {
     timerRemainingTime = (hours * 60 * 60 + minutes * 60 + seconds) * 1000;
 
     if (timerRemainingTime > 0) {
-        if (!timerRunning) {
-            timerRunning = true;
-            timerInterval = setInterval(updateTimer, 1000);
-            document.getElementById('start-timer').style.display = 'none';
-            document.getElementById('pause-timer').style.display = 'inline-block';
-        }
+        timerRunning = true;
+        timerInterval = setInterval(updateTimer, 1000);
+        document.getElementById('start-timer').style.display = 'none';
+        document.getElementById('pause-timer').style.display = 'inline-block';
+        document.getElementById('stop-timer').style.display = 'inline-block';
+        document.getElementById('resume-timer').style.display = 'none';
     }
 }
 
@@ -133,6 +133,7 @@ function resetTimer() {
     document.getElementById('timer-hours').value = '';
     document.getElementById('timer-minutes').value = '';
     document.getElementById('timer-seconds').value = '';
+    document.getElementById('display').innerHTML = '00:00:00';
     document.getElementById('start-timer').style.display = 'inline-block';
     document.getElementById('pause-timer').style.display = 'none';
     document.getElementById('resume-timer').style.display = 'none';
@@ -171,7 +172,7 @@ function updateRealTime() {
     let seconds = now.getSeconds();
     let ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12;
-    hours = hours ? hours : 12; 
+    hours = hours ? hours : 12;
     minutes = minutes < 10 ? '0' + minutes : minutes;
     seconds = seconds < 10 ? '0' + seconds : seconds;
     let currentTime = `${hours}:${minutes}:${seconds} ${ampm}`;
